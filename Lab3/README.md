@@ -10,4 +10,4 @@ Teil2:
 3. docker-compose up -d
 
 Die Website kann man unter localhost/8000 aufrufen. 
-Die Container für Teil2 werden automatisch erstellt. In den jeweiligen Dockerfiles wird beschrieben wie Docker Images erstellt werden müssen.
+Die Container für Teil2 werden automatisch erstellt. In den jeweiligen Dockerfiles wird beschrieben wie Docker Images erstellt werden. Teil1 und Teil2 nicht gleichzeitig laufen lassen, da beide Port8000 verwenden.
