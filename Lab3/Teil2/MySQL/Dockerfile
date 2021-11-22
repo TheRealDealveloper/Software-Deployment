@@ -1,0 +1,26 @@
+FROM debian:jessie
+
+
+
+ENV MYSQL_ROOT_PASSWORD=admin
+ENV MYSQL_DATABASE=test
+ENV MYSQL_USER=admin
+ENV MYSQL_PASSWORD=admin
+
+RUN apt update
+
+RUN echo "mysql-server mysql-server/root_password password ${MYSQL_ROOT_PASSWORD}" | debconf-set-selections
+RUN echo "mysql-server mysql-server/root_password_again password ${MYSQL_ROOT_PASSWORD}" | debconf-set-selections
+
+RUN apt -y install mysql-server && \
+	service mysql restart && \
+	printf "${MYSQL_ROOT_PASSWORD}\nn\ny\ny\ny\n" | mysql_secure_installation && \
+	sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
+
+EXPOSE 3306
+
+CMD service mysql restart && \
+	mysql --password=${MYSQL_ROOT_PASSWORD} -e "CREATE USER '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PASSWORD}'" || true && \
+	mysql --password=${MYSQL_ROOT_PASSWORD} -e "CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE}" && \
+	mysql --password=${MYSQL_ROOT_PASSWORD} -e "GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO '${MYSQL_USER}'@'%'" && \
+	mysqld
