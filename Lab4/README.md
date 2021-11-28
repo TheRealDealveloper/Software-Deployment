@@ -16,14 +16,14 @@ Selbes Prinzip wie bei mysql, wobei das PersistentVolume an "/var/www/html" gebu
 
 <code>az aks get-credentials --resource-group myResourceGroup --name myAKSCluster</code>
 
-<code>kubectl apply -k ./</code>
+<code>kubectl apply -k ./</code>  
 ![alt text](https://github.com/TheRealDealveloper/Software-Deployment/blob/main/Lab4/Pictures/kube%20apply.png)
 *Das kustomization.yaml beinhaltet alle Resourcen für das Deployment von einer WordPress Webseite and einer MySQL Datenbank.*
 
-<code>kubectl get services wordpress</code>
+<code>kubectl get services wordpress</code>  
 ![alt text](https://github.com/TheRealDealveloper/Software-Deployment/blob/main/Lab4/Pictures/kube%20get%20service.png)
 *External-IP und Port 80 ergeben die URL (Port 80, weil es in den Resourcen so in der yaml Datei definiert worden ist), und im Browser eingeben*
 
-<code>kubectl delete -k ./</code>
+<code>kubectl delete -k ./</code>  
 ![alt text](https://github.com/TheRealDealveloper/Software-Deployment/blob/main/Lab4/Pictures/kube%20delete.png)
 *Zum löschen der Secrets, Deployments, Services und PersistentVolumeClaims:*
