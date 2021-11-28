@@ -24,7 +24,7 @@ Selbes Prinzip wie bei mysql, wobei das PersistentVolume an "/var/www/html" gebu
 
 <code>kubectl get services wordpress</code>  
 ![alt text](https://github.com/TheRealDealveloper/Software-Deployment/blob/main/Lab4/Pictures/kube%20get%20service.png)  
-*External-IP und Port 80 ergeben die URL (Port 80, weil es in den Resourcen so in der yaml Datei definiert worden ist), und im Browser eingeben. Falls "Pending" steht etwas warten und dann erneut versuchen*
+*External-IP und Port 80 ergeben die URL (Port 80, weil es in den Resourcen so in der yaml Datei definiert worden ist), und im Browser eingeben (20.120.51.229:80). Falls "Pending" steht etwas warten und dann erneut versuchen*
 
 <code>kubectl delete -k ./</code>  
 ![alt text](https://github.com/TheRealDealveloper/Software-Deployment/blob/main/Lab4/Pictures/kube%20delete.png)  
