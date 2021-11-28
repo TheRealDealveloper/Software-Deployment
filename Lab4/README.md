@@ -9,6 +9,17 @@ Selbes Prinzip wie bei mysql, wobei das PersistentVolume an "/var/www/html" gebu
 
 
 Schritte:
+az group create --name myResourceGroup --location eastus
+
+az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 1 --enable-addons monitoring --generate-ssh-keys
+
+az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 
 kubectl apply -k ./
+The kustomization.yaml contains all the resources for deploying a WordPress site and a MySQL database.
+
 kubectl get services wordpress
+coyp address, port 80, enter in browser
+
+kubectl delete -k ./
+delete your Secret, Deployments, Services and PersistentVolumeClaims:
