@@ -10,7 +10,7 @@ Selbes Prinzip wie bei mysql, wobei das PersistentVolume an "/var/www/html" gebu
 
 
 # Schritte:
-<code>cd Lab4/Teil2</code>
+<code>cd Lab4/Wordpress-MySQL-AKS</code>
 
 <code>az group create --name myResourceGroup --location eastus</code>
 
