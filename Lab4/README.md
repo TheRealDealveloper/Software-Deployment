@@ -1,4 +1,4 @@
-# Files
+# Dateien
 ## kustomization.yaml <br />
 Beschreibt die Anpassung von Kubernetes Konfugurationen. Hier definiert es einen secret generator, mit dem ein objekt generiert wird, dass sensible daten beinhaltet wie zb Passwörter. Weiters kann man noch Resourcen angeben, in diesem Fall Wordpress und MySQL.
 
