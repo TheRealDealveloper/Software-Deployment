@@ -10,6 +10,8 @@ Selbes Prinzip wie bei mysql, wobei das PersistentVolume an "/var/www/html" gebu
 
 
 # Schritte:
+<code>cd Lab4/Teil2</code>
+
 <code>az group create --name myResourceGroup --location eastus</code>
 
 <code>az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 1 --enable-addons monitoring --generate-ssh-keys</code>
